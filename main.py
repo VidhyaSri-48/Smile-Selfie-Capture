@@ -5,6 +5,9 @@ faceCascade = cv2.CascadeClassifier("dataset/haarcascade_frontalface_default.xml
 smileCascade = cv2.CascadeClassifier("dataset/haarcascade_smile.xml")#pretrained model is imported to detect the smile which is being captured by the camera and detected face,an external file is imported(downloaded from github).
 
 while True:# while the camera is working
+
+    # capturing smile continuously using while loop
+
     success,img = video.read()#read the capturing video 
     grayImg = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)#convert the capturing video into gray scle format
     faces = faceCascade.detectMultiScale(grayImg,1.1,4)#detecting the face using the imported pre-trained model
